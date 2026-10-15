@@ -10,7 +10,8 @@ const observer = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.15 }
+  // Tall sections must still appear when zoom leaves only a small part visible.
+  { threshold: 0 }
 );
 
 faders.forEach(el => observer.observe(el));
